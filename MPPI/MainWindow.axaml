@@ -1,0 +1,97 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	      xmlns:sg="clr-namespace:SpacedGridControl.Avalonia;assembly=SpacedGridControl.Avalonia"
+        mc:Ignorable="d" Width="800" Height="450"
+        x:Class="MPPI.MainWindow"
+        Title="MPPI">
+  <Window.Styles>
+    <Style Selector="Panel.gray">
+
+    </Style>
+    <Style Selector="StackPanel.buttons Button">
+      <Setter Property="Margin" Value="15" />
+    </Style>
+  </Window.Styles>
+  <Grid Width="800" Height="450">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="60"/>
+      <RowDefinition />
+      <RowDefinition Height="60"/>
+    </Grid.RowDefinitions>
+    <Panel Grid.Row="0" Classes="dgray">
+      <TextBlock Text="Multi-Platform Package Installer" FontFamily="Inter" FontWeight="Black" FontSize="24" Margin="15,7,0,5"/>
+      <TextBlock Text="Your all-in-one installer for every platform" FontFamily="Inter" FontWeight="Medium" FontSize="14" Margin="15,37,0,5"/>
+    </Panel>
+    <StackPanel Grid.Row="1">
+      <TextBlock Text="This utility helps you with installing needed components on your computer."
+                 FontFamily="Inter"
+                 FontWeight="DemiBold"
+                 Margin="30,30,0,0"
+                 TextWrapping="Wrap"
+                 />
+      <TextBlock Text="Please, make decision on type of instalations you want to perform:"
+                 FontFamily="Inter"
+                 FontWeight="DemiBold"
+                 Margin="30,10,0,0"
+                 TextWrapping="Wrap"
+                 />
+      <Grid Margin="0,20">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition />
+          <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <sg:SpacedGrid Margin="15" Grid.Column="0" HorizontalAlignment="Center" RowSpacing="10">
+          <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+          </Grid.RowDefinitions>
+          <TextBlock Text="Zero Install"
+                     TextAlignment="Center"
+                     FontFamily="Inter"
+                     FontWeight="DemiBold"
+                     Grid.Row="0"
+                 />
+          <TextBlock Text="Simply install only selected applications"
+                     TextAlignment="Center"
+                     FontFamily="Inter"
+                     FontWeight="DemiBold"
+                     Grid.Row="1"
+                 />
+          <RadioButton GroupName="InstallVersion" Name="ZeroInstall" IsChecked="True"
+                     HorizontalAlignment="Center"
+                       Click="RadioButton_Click"
+                     Grid.Row="2"></RadioButton>
+        </sg:SpacedGrid>
+        <sg:SpacedGrid Margin="15" Grid.Column="1" HorizontalAlignment="Center" RowSpacing="10">
+          <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+          </Grid.RowDefinitions>
+          <TextBlock Text="Standard Install"
+                     FontFamily="Inter"
+                     FontWeight="DemiBold"
+                     TextAlignment="Center"
+                     Grid.Row="0"
+                 />
+          <TextBlock Text="Install application locally for updates"
+                     TextAlignment="Center"
+                     FontFamily="Inter"
+                     FontWeight="DemiBold"
+                     Grid.Row="1"
+                 />
+          <RadioButton GroupName="InstallVersion" Name="StandardInstall"
+                     HorizontalAlignment="Center"
+                       Click="RadioButton_Click"
+                     Grid.Row="2"></RadioButton>
+        </sg:SpacedGrid>
+      </Grid>
+    </StackPanel>
+    <StackPanel Classes="buttons" Orientation="Horizontal" Grid.Row="2" Width="" HorizontalAlignment="Right">
+      <Button Classes="Light" Click="Button_Click_1" >Start</Button>
+    </StackPanel>
+  </Grid>
+</Window>
