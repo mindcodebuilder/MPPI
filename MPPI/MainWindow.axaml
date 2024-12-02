@@ -44,49 +44,53 @@
         </Grid.ColumnDefinitions>
         <sg:SpacedGrid Margin="15" Grid.Column="0" HorizontalAlignment="Center" RowSpacing="10">
           <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
           </Grid.RowDefinitions>
+          <Image Source="/icons/paper_1_minus.png" Height="100" Stretch="Uniform" Width="100" Grid.Row="0" />
           <TextBlock Text="Zero Install"
                      TextAlignment="Center"
                      FontFamily="Inter"
                      FontWeight="DemiBold"
-                     Grid.Row="0"
+                     Grid.Row="1"
                  />
           <TextBlock Text="Simply install only selected applications"
                      TextAlignment="Center"
                      FontFamily="Inter"
                      FontWeight="DemiBold"
-                     Grid.Row="1"
+                     Grid.Row="2"
                  />
           <RadioButton GroupName="InstallVersion" Name="ZeroInstall" IsChecked="True"
                      HorizontalAlignment="Center"
                        Click="RadioButton_Click"
-                     Grid.Row="2"></RadioButton>
+                     Grid.Row="3"></RadioButton>
         </sg:SpacedGrid>
         <sg:SpacedGrid Margin="15" Grid.Column="1" HorizontalAlignment="Center" RowSpacing="10">
           <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
           </Grid.RowDefinitions>
+          <Image Source="/icons/paper_1.png" Height="100" Stretch="Uniform" Width="100" Grid.Row="0" />
           <TextBlock Text="Standard Install"
                      FontFamily="Inter"
                      FontWeight="DemiBold"
                      TextAlignment="Center"
-                     Grid.Row="0"
+                     Grid.Row="1"
                  />
           <TextBlock Text="Install application locally for updates"
                      TextAlignment="Center"
                      FontFamily="Inter"
                      FontWeight="DemiBold"
-                     Grid.Row="1"
+                     Grid.Row="2"
                  />
           <RadioButton GroupName="InstallVersion" Name="StandardInstall"
                      HorizontalAlignment="Center"
                        Click="RadioButton_Click"
-                     Grid.Row="2"></RadioButton>
+                     Grid.Row="3"></RadioButton>
         </sg:SpacedGrid>
       </Grid>
     </StackPanel>
